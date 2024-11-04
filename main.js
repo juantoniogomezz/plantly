@@ -353,9 +353,7 @@ $hamburguesa.addEventListener('click', function() {
         $centroHam.style.transition = '150ms';
         $ultimoHam.style.transition = '350ms';
         $popupHam.style.transition = '350ms';
-
         $popupHam.style.display = 'flex';
-
     } else {
         $centroHam.style.opacity = '1';
         $primerHam.style.transform = 'rotate(0deg)';
@@ -365,7 +363,23 @@ $hamburguesa.addEventListener('click', function() {
         $popupHam.style.display = 'none';
     }
 });
+const botonCompra = document.getElementById('boton-compra');
 
+// Comprobar el estado del carrito al hacer clic
+botonCompra.addEventListener('click', function(){
+    if (productosEnCarrito.length === 0) {  // Verificar si el carrito está vacío
+        alert("No tienes productos en el carrito.");
+    } else {
+        botonCompra.style.cursor = 'pointer';
+        alert("Gracias por tu compra");
+        productosEnCarrito = []; // vacía el carrito
+        crearCarrito(); 
+        abrirCarrito(); // cierra el carrito una vez que compras
+        totalCarrito(); // vuelve a cero el total 
+        totalProductos(); // vuelve a cero la cantidad
+    }
+
+});
 // Botón buscador (lupa) oculta o muestra la barra de búsqueda
 $lupaBoton.addEventListener('click', function(){
     if ($buscador.style.display === 'none' || $buscador.style.display === ''){
@@ -373,8 +387,6 @@ $lupaBoton.addEventListener('click', function(){
         $resultadosBusqueda.innerHTML = '';
         $buscador.value = '';
         $lupaBoton.innerHTML = $contenidoBoton2;
-
-        
     } else{
         $buscador.style.display = 'none';
         $resultadosBusqueda.innerHTML = '';

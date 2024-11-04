@@ -527,7 +527,7 @@ img {
     font-family: "Montserrat";
     padding: 0;
     cursor: pointer;
-    color: var(--negro); 
+    color: var(--negro);
 }
 
 .carrito-quitar span {
@@ -577,12 +577,14 @@ hr {
     font-weight: 300;
     cursor: pointer;
 }
-.carrito-vacio{
+
+.carrito-vacio {
     font-size: 20px;
     font-family: 'Montserrat';
     font-weight: 200;
     padding: 50px 0;
 }
+
 .boton-seguirComprando {
     font-family: "Montserrat";
     font-size: 17px;
@@ -814,9 +816,11 @@ hr {
         top: 0px;
         right: 0;
     }
+
     #sumar-producto {
         margin-left: 30px;
     }
+
     .carrito-nombre {
         font-size: 20px;
     }
